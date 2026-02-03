@@ -43,6 +43,16 @@ session_destroy();
         a:hover {
             background: #1d3557;
         }
+        .watermark {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.25);
+    pointer-events: none;
+    user-select: none;
+}
+
     </style>
 </head>
 <body>
