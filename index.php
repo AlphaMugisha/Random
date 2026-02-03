@@ -1,16 +1,13 @@
 <?php
 session_start();
 
-// check if user is logged in
 if (!isset($_SESSION['user'])) {
     header("Location: login.php");
     exit();
 }
 
-// calculate remaining time
 $timeLeft = $_SESSION['expire'] - time();
 
-// if time is up, destroy session and redirect to out.php
 if ($timeLeft <= 0) {
     session_destroy();
     header("Location: out.php");
@@ -21,30 +18,81 @@ if ($timeLeft <= 0) {
 <html>
 <head>
     <title>Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            width: 320px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .timer {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #e63946;
+            margin: 15px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #e63946;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #c92a2a;
+        }
+    </style>
 </head>
 <body>
+
+<div class="card">
     <h1>Welcome, <?php echo $_SESSION['user']; ?> 👋</h1>
-    <p>Time left before logout: <span id="countdown"><?php echo $timeLeft; ?></span> seconds</p>
+    <p>Session expires in</p>
+    <div class="timer">
+        <span id="countdown"><?php echo $timeLeft; ?></span> seconds
+    </div>
 
     <form method="post" action="logout.php">
         <button type="submit">Logout</button>
     </form>
+</div>
 
-    <script>
-        // Countdown timer
-        let timeLeft = <?php echo $timeLeft; ?>;
-        const countdownEl = document.getElementById('countdown');
+<script>
+    let timeLeft = <?php echo $timeLeft; ?>;
+    const countdown = document.getElementById("countdown");
 
-        const timer = setInterval(() => {
-            timeLeft--;
-            if(timeLeft < 0) timeLeft = 0;
-            countdownEl.textContent = timeLeft;
+    const timer = setInterval(() => {
+        timeLeft--;
+        if (timeLeft < 0) timeLeft = 0;
+        countdown.textContent = timeLeft;
 
-            if (timeLeft <= 0) {
-                clearInterval(timer);
-                window.location.href = "out.php";
-            }
-        }, 1000);
-    </script>
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            window.location.href = "out.php";
+        }
+    }, 1000);
+</script>
+
 </body>
 </html>
