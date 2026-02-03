@@ -1,5 +1,4 @@
 <?php
-// optional: destroy any session just in case
 session_start();
 session_destroy();
 ?>
@@ -9,29 +8,49 @@ session_destroy();
     <title>Logged Out</title>
     <style>
         body {
+            margin: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            background: #f8d7da;
             font-family: Arial, sans-serif;
-            background-color: #fff;
         }
+
+        .box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
         h1 {
-            color: red;
-            font-size: 2rem;
+            color: #d62828;
+            margin-bottom: 15px;
         }
+
         a {
-            margin-top: 20px;
-            display: block;
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #457b9d;
+            color: white;
             text-decoration: none;
-            color: blue;
+            border-radius: 8px;
+        }
+
+        a:hover {
+            background: #1d3557;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1>You are logged out ❌</h1>
-        <a href="login.php">Click here to log in again</a>
-    </div>
+
+<div class="box">
+    <h1>You are logged out ❌</h1>
+    <a href="login.php">Log in again</a>
+</div>
+
 </body>
 </html>
