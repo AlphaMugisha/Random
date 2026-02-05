@@ -12,7 +12,9 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-2 px-4">
         <div class="container-fluid">
-            <img src="image.png" alt="logo"></a>
+            <a class="navbar-brand" href="#">
+                <img src="image.png" alt="logo" height="40">
+            </a>
             <div class="ms-auto d-flex align-items-center">
                 <a href="#" class="nav-link px-3 text-secondary">Help</a>
                 <a href="#" class="nav-link px-3 text-secondary">Registered Products</a>
@@ -25,7 +27,7 @@
         </div>
     </nav>
 
-    <div class="container mt-4">
+    <div class="container mt-4 mb-5">
         <div class="main-card shadow-sm rounded-4 bg-white overflow-hidden">
             
             <div class="p-4 border-bottom">
@@ -52,7 +54,7 @@
                     </div>
                     <div class="col">
                         <div class="step-item text-muted">
-                            <span class="step-num">3</span>
+                            <span class="step-num">4</span>
                             <div class="step-text"><strong>Submit</strong><br><small>License details</small></div>
                         </div>
                     </div>
@@ -76,21 +78,20 @@
                     <div class="search-box p-3 rounded-4 bg-light">
                         <label class="form-label text-secondary small fw-bold">Search for location</label>
                         <div class="input-group mb-3 border rounded-3 bg-white">
-                            <span class="input-group-text bg-transparent border-0"><i class="bi bi-search text-warning"></i></span>
+                            <span class="input-group-text bg-transparent border-0">
+                                <i class="bi bi-search text-warning"></i>
+                            </span>
                             <input type="text" class="form-control border-0" placeholder="Kimi|">
                         </div>
                         <ul class="list-unstyled mb-0 location-results">
-                            <li class="py-2">Kimihurura</li>
-                            <li class="py-2">Kimironko</li>
+                            <li class="py-2 border-bottom">Kimihurura</li>
+                            <li class="py-2 border-bottom">Kimironko</li>
                             <li class="py-2">Kimisagara</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="col-md-8 bg-map position-relative">
-                    <div class="map-overlay-tools position-absolute top-0 start-0 p-3">
-                        <span class="badge bg-dark bg-opacity-50">500 m</span>
-                    </div>
+                <div class="col-md-8 bg-white blank-side">
                     </div>
             </div>
         </div>
