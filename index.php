@@ -20,7 +20,7 @@ if ($timeLeft <= 0) {
     <title>Dashboard</title>
     <style>
         body {
-            margin: 0;
+            margin: 1;
             height: 100vh;
             display: flex;
             justify-content: center;
