@@ -123,7 +123,4 @@ if (isset($_POST['send_message'])) {
 </main>
 
 <?php include 'includes/footer.php'; ?>
-
-<script>
-    AOS.init({ duration: 1000, once: true });
-</script>
+<script src="script.js"></script>
