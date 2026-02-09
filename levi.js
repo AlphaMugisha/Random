@@ -7,4 +7,4 @@ const student = [
 ];
 const sorted = student.sort((a, b) => b.age - a.age);
 console.log(sorted);
-console.log (sorted[0]);
+console.log (sorted[5 - 1].name);
