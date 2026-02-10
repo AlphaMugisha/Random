@@ -31,5 +31,9 @@ body{
     color: #00bcd4;
 }
 .card{
-    
+    border: 1px solid;
+    border-radius: 20px;
+    background-color: #00bcd4;
+    color: #111;
+    box-sizing: bo;
 }
